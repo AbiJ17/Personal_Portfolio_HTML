@@ -1,0 +1,781 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth;
+}
+
+body { 
+    background: #080808; 
+    color: #fff;
+}
+
+#header { 
+    width: 100%; 
+    height: 100vh; 
+    background-image: url(Images/sticker.png);
+    background-size: contain; 
+    background-position: right; 
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container { 
+    padding: 10px 10%; 
+}
+
+nav { 
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.logo { 
+    width: 140px;
+    opacity: 1;
+}
+
+nav ul li { 
+    display: inline-block; 
+    list-style: none;
+    margin: 10px 20px; 
+}
+
+nav ul li a{ 
+    color: #fff; 
+    text-decoration: none;
+    font-size: 18px; 
+    position: relative; 
+}
+
+nav ul li a::after { 
+    content: ''; 
+    width: 0; 
+    height: 3px; 
+    background: #ff004f;
+    position: absolute;
+    left: 0; 
+    bottom: -6px; 
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text { 
+    margin-top: 10%; 
+    font-size: 25px; 
+    
+}
+
+.header-text h1 { 
+    font-size: 60px; 
+    margin-top: 20px;
+}
+
+.header-text h1 span{ 
+    font-size: 60px;
+    color: #ff004f; 
+}
+
+.resume-social {
+    margin-top: 100px;
+}
+
+.resume {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.social-icons{ 
+    margin-top: 10px;
+    margin-left: 5%;
+}
+
+.social-icons a { 
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 10px; 
+    color: #ababab; 
+    display: inline-block;
+    transition: transform 0.5s; 
+}
+
+.social-icons a:hover { 
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.see-more {
+    margin-top: 250px;
+    font-size: 24px;
+    animation: flash 1.5s infinite;
+    text-align: center;
+    position: relative;
+}
+
+.see-more i {
+    font-size: 24px;
+    animation: moveDown 1s infinite;
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes moveDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.btn { 
+    display: block;
+    margin-right: 20px; 
+    width: fit-content; 
+    border: 1px solid #ff004f; 
+    padding: 12px 50px; 
+    border-radius: 6px; 
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn:hover { 
+    background: #ff004f;
+}
+
+
+/* ---------- About Section ------------------- */
+#about {
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 40%;
+    font-size: 18px;
+}
+
+.about-heading {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.skills-section {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.about-links {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.about-links:hover {
+    color: #ff004f;
+}
+
+.about-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.about-links.active-link::after {
+    width: 50%;
+}
+
+/* Skills and Education */
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.tab-contents ul li:hover {
+    transform: translateX(10px);
+    color: #ff004f;
+}
+
+.tab-contents ul li span {
+    color: #b54769;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+/* Glowing Effect */
+.tab-contents ul li {
+    position: relative;
+}
+
+.tab-contents ul li::before,
+.tab-contents ul li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.tab-contents ul li::before {
+    
+    filter: blur(10px);
+    transform: scale(0.95);
+}
+
+.tab-contents ul li:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.tab-contents ul li:hover::after {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #262626, 0 0 20px #262626, 0 0 30px #262626;
+}
+
+/* General Text Styling for Skills and Education */
+.skills-section, .tab-contents ul li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.tab-contents ul li span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff004f;
+}
+
+.tab-contents ul {
+    padding-left: 0px;
+}
+
+.timeline-education { 
+    position: relative; 
+    max-width: 1200px; 
+    margin: 100px auto;
+    left: 70px;
+}
+
+.container-education { 
+    padding: 10px 50px; 
+    position: relative; 
+    width: 70%; 
+    overflow: visible;
+}
+
+/* Glowing effect applied to a pseudo-element */
+.container-education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px; /* Match the border-radius of the text box */
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+    z-index: -1; /* Ensure the glow is behind the content */
+    background: rgba(255, 0, 79, 0.5); /* Adjust the color as needed */
+    filter: blur(10px);
+    transform: scale(0.95);
+}
+
+.text-box-education { 
+    padding: 20px 30px; 
+    background: #262626; 
+    position: relative; 
+    border-radius: 6px; 
+    font-size: 15px;
+}
+
+.text-box-education p { 
+    font-weight: 200; 
+    color: #ababab;
+}
+
+.text-box-education h2{ 
+    font-weight: 500;
+    color: #fff;
+}
+
+.left-edu-container {
+    left: -20%;    
+}
+
+.right-edu-container {
+    left: 50%;
+}
+
+.left-edu-container img { 
+    left: 415px;
+}
+
+.right-edu-container img { 
+    left: -15px;
+}
+
+.timeline-education::after { 
+    content: ''; 
+    position: absolute;
+    width: 6px; 
+    height: 100%; 
+    background: #ff004f;
+    top: 0; 
+    left: 50%; 
+    margin-left: -3px; 
+    z-index: -1;
+}
+
+.text-box-education h2{ 
+    font-weight: 500;
+}
+
+.text-box-education h3 { 
+    font-weight: 300;
+    color:#b54769;
+}
+
+.text-box-education small { 
+    display: inline-block;
+    margin-bottom: 15px;
+    color:#ff004f;
+}
+
+.left-container-edu-arrow { 
+    height: 0; 
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1; 
+    border-top: 15px solid transparent; 
+    border-bottom: 15px solid transparent; 
+    border-left: 15px solid red; 
+    right: -15px;
+}
+
+.right-container-edu-arrow { 
+    height: 0; 
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1; 
+    border-top: 15px solid transparent; 
+    border-bottom: 15px solid transparent; 
+    border-right: 15px solid red; 
+    left: -15px;
+}
+
+/* Apply the glowing effect on hover */
+.container-education:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.container-education:hover::after {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 0, 79, 0.5), 0 0 20px rgba(255, 0, 79, 0.5), 0 0 30px rgba(255, 0, 79, 0.5);
+}
+
+.container-education img { 
+    position: absolute; 
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%; 
+    right: -20px; 
+    top: 37px; 
+    z-index: 10;
+}
+
+/* ---------------- Experiences Section ------------------ */
+#experiences { 
+    padding: 50px 0; 
+}
+
+.experiences-heading {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 192px;
+}
+
+
+.timeline-experiences { 
+    position: relative; 
+    max-width: 1200px; 
+    margin: 100px auto;
+}
+
+.container-experiences { 
+    padding: 10px 50px; 
+    position: relative; 
+    width: 50%; 
+}
+
+/* Glowing effect applied to a pseudo-element */
+.container-experiences::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px; /* Match the border-radius of the text box */
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+    z-index: -1; /* Ensure the glow is behind the content */
+    background: rgba(255, 0, 79, 0.5); /* Adjust the color as needed */
+    filter: blur(10px);
+    transform: scale(0.95);
+}
+
+.text-box { 
+    padding: 20px 30px; 
+    background: #262626; 
+    position: relative; 
+    border-radius: 6px; 
+    font-size: 15px; 
+    
+}
+
+.left-container {
+    left: 0%;    
+}
+
+.right-container {
+    left: 50%;
+}
+
+.container-experiences img { 
+    position: absolute; 
+    width: 40px; 
+    border-radius: 50%; 
+    right: -20px; 
+    top: 32px; 
+    z-index: 10;
+}
+
+.right-container img {
+    left: -20px;
+}
+
+.timeline-experiences::after { 
+    content: ''; 
+    position: absolute;
+    width: 6px; 
+    height: 100%; 
+    background: #ff004f;
+    top: 0; 
+    left: 50%; 
+    margin-left: -3px; 
+    z-index: -1;
+}
+
+.text-box h2{ 
+    font-weight: 500;
+}
+
+.text-box h3 { 
+    font-weight: 300;
+    color:#b54769;
+}
+
+.text-box small { 
+    display: inline-block;
+    margin-bottom: 15px;
+    color:#ff004f;
+}
+
+.text-box p { 
+    font-weight: 200; 
+    color: #ababab;
+}
+
+.left-container-arrow { 
+    height: 0; 
+    width: 0;
+    position: absolute;
+    top: 20px;
+    z-index: 1; 
+    border-top: 15px solid transparent; 
+    border-bottom: 15px solid transparent; 
+    border-left: 15px solid red; 
+    right: -15px;
+}
+
+.right-container-arrow { 
+    height: 0; 
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1; 
+    border-top: 15px solid transparent; 
+    border-bottom: 15px solid transparent; 
+    border-right: 15px solid red; 
+    left: -15px;
+}
+
+.icon {
+    position: absolute;
+    left: -40px;
+    font-size: 24px;
+    color: #ff004f;
+    top: 10px;
+} 
+
+/* Apply the glowing effect on hover */
+.container-experiences:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.container-experiences:hover::after {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 0, 79, 0.5), 0 0 20px rgba(255, 0, 79, 0.5), 0 0 30px rgba(255, 0, 79, 0.5);
+}
+
+
+/* ------------------- Projects Section ----------------- */
+#projects { 
+    padding: 50px 0;
+}
+
+.project-heading { 
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.work-list { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px; 
+    margin-top: 50px; 
+}
+
+.work { 
+    border-radius: 10px; 
+    position: relative; 
+    overflow: hidden; 
+
+}
+
+.work img { 
+    width: 100%; 
+    height: 500px; 
+    border-radius: 10px; 
+    object-fit: cover;
+    display: block; 
+    transition: transform 0.5s;
+}
+
+.layer{ 
+    width: 100%; 
+    height: 0; 
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f); 
+    border-radius: 10px;
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    overflow: hidden;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction:column; 
+    padding: 0 40px; 
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px; 
+
+}
+
+.layer a{
+    margin-top: 20px; 
+    color: #ff004f; 
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer{ 
+    height: 100%; 
+}
+
+/* ------------------------- CONTACTS SECTION ----------------------- */
+.contact-left { 
+    flex-basis: 50%; 
+    font-size: 20px;
+}
+
+.contact-right { 
+    flex-basis: 50%;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.contact-left p{ 
+    margin-top: 30px;
+}
+
+.contact-right p {
+    color: #ababab;
+}
+
+.contact-left p i { 
+    color: #ff004f; 
+    margin-right: 15px; 
+    font-size: 20px; 
+}
+
+.contact-heading { 
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+}
+.icons{ 
+    margin-top: 30px;
+}
+
+.icons a { 
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px; 
+    color: #ababab; 
+    display: inline-block;
+    transition: transform 0.5s; 
+}
+
+.icons a:hover { 
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.copyright { 
+    width: 100%; 
+    text-align: center; 
+    padding: 25px 0;
+    background: #262626; 
+    font-weight:300; 
+    margin-top: 20px; 
+}
+
+.btn2 { 
+    display: block;
+    margin-right: 20px; 
+    width: fit-content; 
+    border: 1px solid #ff004f; 
+    padding: 12px 50px; 
+    border-radius: 6px; 
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn2:hover { 
+    background: #ff004f;
+}
+
+.icons-contact-container { 
+    display: flex; 
+    align-items: center;
+    margin-top: 30px;
+}
+
+.resume-contact { 
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #ff004f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.scroll-top-btn:hover {
+    background-color: #ff3366;
+    transform: scale(1.1);
+}
+
+.scroll-top-btn i {
+    pointer-events: none;
+}
