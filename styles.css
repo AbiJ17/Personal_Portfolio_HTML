@@ -614,18 +614,25 @@ nav ul li a:hover::after{
     color: #fff;
 }
 
+.project-container { 
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .work-list { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Display 3 projects at a time */
     grid-gap: 40px; 
-    margin-top: 50px; 
+    margin-top: 50px;
+    overflow: hidden;
+    width: 100%;
 }
 
 .work { 
     border-radius: 10px; 
     position: relative; 
     overflow: hidden; 
-
 }
 
 .work img { 
@@ -659,7 +666,6 @@ nav ul li a:hover::after{
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px; 
-
 }
 
 .layer a{
@@ -682,6 +688,8 @@ nav ul li a:hover::after{
 .work:hover .layer{ 
     height: 100%; 
 }
+
+
 
 /* ------------------------- CONTACTS SECTION ----------------------- */
 .contact-left { 
