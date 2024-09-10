@@ -167,6 +167,22 @@ nav ul li a:hover::after{
     background: #ff004f;
 }
 
+.typing-active::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 
 /* ---------- About Section ------------------- */
 #about {

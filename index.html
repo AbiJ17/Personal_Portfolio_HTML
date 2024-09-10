@@ -22,8 +22,8 @@
             </ul>
         </nav>
         <div class="header-text">
-            <p>Second Year Computer Science Student at Toronto Metropolitan University</p>
-            <h1>Hello, I'm <br><span>Abinash Jegatheeswaran</span></h1>
+            <p>Third Year Computer Science Student at Toronto Metropolitan University</p>
+            <h1>Hello, I'm <br><span class="typing typing-active">Abinash Jegatheeswaran</span></h1>
         </div>
         <div class="resume-social">
             <div class="resume">
@@ -39,6 +39,7 @@
         </div>
     </div>
 </div>
+<script src="typing.js"></script>
 
 <!-------------------- ABOUT SECTION ----------------------------------->
 <div id="about">
@@ -220,42 +221,8 @@
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-    <script>
+<script src="tabs.js"></script>
+<script src="scrollUpButton.js"></script>
 
-        var tablinks = document.getElementsByClassName("about-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname){ 
-            for (tablink of tablinks) { 
-                tablink.classList.remove("active-link"); 
-            }
-            for (tabcontent of tabcontents) { 
-                tabcontent.classList.remove("active-tab"); 
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab"); 
-        }
-    </script>
-
-    <script>
-        // Get the button
-        var scrollTopBtn = document.getElementById("scrollTopBtn");
-
-        // Show the button when the user scrolls to the About section
-        window.onscroll = function() {
-            var aboutSection = document.getElementById("about");
-            if (window.scrollY >= aboutSection.offsetTop) {
-                scrollTopBtn.style.display = "block";
-            } else {
-                scrollTopBtn.style.display = "none";
-            }
-        };
-
-        // Scroll to the top of the document when the button is clicked
-        scrollTopBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    </script>
-    
 </body>
 </html>
